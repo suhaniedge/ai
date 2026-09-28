@@ -1,0 +1,270 @@
+{
+  "brand": {
+    "name": "SuhaniEdge — AI FREELANCE LAUNCHPAD",
+    "tagline": "Master Live AI Freelancing & Build a High-Income Digital Practice",
+    "target_audience": "Indian students, working professionals, career switchers, and aspiring freelancers seeking high-paying AI skills.",
+    "webinar_price": "₹9",
+    "payment_link": "https://rzp.io/rzp/webinarregistration9",
+    "core_value_prop": "Transform from AI-curious to a high-earning AI freelancer in 120 minutes of live, actionable training.",
+    "emotional_journey": [
+      "Curiosity",
+      "Self-Identification",
+      "Problem Awareness",
+      "Aha Moment",
+      "Desired Future",
+      "Roadmap",
+      "Value Stack",
+      "Trust & Credibility",
+      "₹9 Micro-Commitment",
+      "Registration"
+    ]
+  },
+  "theme": {
+    "mode": "hybrid_alternating_rhythm",
+    "rhythm_sequence": [
+      "Dark Premium Purple (Hero)",
+      "Warm Ivory (Benefits)",
+      "Light Lavender (Learning)",
+      "Purple Gradient (AI Ecosystem)",
+      "Interactive Dark Futuristic (Suha AI)",
+      "High-Contrast (Aha Moment)",
+      "Warm White (Roadmap)",
+      "Dark/Light Split (Transformation)",
+      "Premium Purple (Bonuses)",
+      "Dark Premium (Value Stack)",
+      "Warm White (Social Proof)",
+      "Soft Lavender (Mentor)",
+      "Ivory (Objections)",
+      "Dark Purple (Who It's For)",
+      "Light Lavender (Reality Check)",
+      "Warm Ivory (Why This Matters)",
+      "Deep Purple + Gold CTA (Final Offer)",
+      "Dark Premium Purple (Final Suha AI)",
+      "Warm White (FAQ)",
+      "Dark Purple (Footer)"
+    ]
+  },
+  "colors": {
+    "primary_cta_gold": "#F4C95D",
+    "primary_cta_gold_hover": "#E5B84B",
+    "primary_cta_gold_shadow": "rgba(244, 201, 93, 0.35)",
+    "deep_purple": "#1A0B2E",
+    "dark_violet": "#150826",
+    "plum": "#38104D",
+    "soft_lavender": "#F5F0FF",
+    "lilac": "#E9DFFC",
+    "warm_white": "#FAF9F6",
+    "ivory": "#FFFDF9",
+    "near_black_purple": "#0D0518",
+    "electric_purple": "#A855F7",
+    "electric_magenta": "#EC4899",
+    "border_purple_glow": "rgba(168, 85, 247, 0.25)",
+    "border_light": "#E2D9F3",
+    "text_dark": "#1A1523",
+    "text_muted": "#6E6B7B",
+    "text_light": "#F3EFFE",
+    "text_gold": "#F4C95D"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Plus Jakarta Sans, Clash Display, sans-serif",
+      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "card_h3": "text-xl sm:text-2xl font-semibold",
+      "label": "text-xs sm:text-sm font-bold uppercase tracking-widest text-electric_purple"
+    },
+    "body": {
+      "font_family": "Outfit, Manrope, sans-serif",
+      "regular": "text-base text-text_dark dark:text-text_light leading-relaxed",
+      "small": "text-sm text-text_muted leading-normal"
+    }
+  },
+  "images": {
+    "mentor_suhani": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwzfHxlbXBvd2VyZWQlMjBJbmRpYW4lMjB3b21hbiUyMHRlY2glMjBtZW50b3IlMjBlbnRyZXByZW5ldXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTA2MTk1MDF8MA&ixlib=rb-4.1.0&q=85",
+    "suha_avatar_3d": "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjB0ZWNoJTIwd29tYW4lMjBzcGVha2VyJTIwbWVudG9yJTIwc21pbGluZyUyMHBvcnRyYWl0fGVufDB8fHx8MTc5MDYxOTUxMXww&ixlib=rb-4.1.0&q=85",
+    "youtube_embed_video_id": "dQw4w9WgXcQ",
+    "youtube_shorts_ids": [
+      "dQw4w9WgXcQ",
+      "dQw4w9WgXcQ",
+      "dQw4w9WgXcQ",
+      "dQw4w9WgXcQ",
+      "dQw4w9WgXcQ",
+      "dQw4w9WgXcQ"
+    ]
+  },
+  "suha_ai": {
+    "character_concept": "Distinctive animated 3D/semi-realistic female AI assistant with warm expression, sleek lavender-glowing futuristic visor/halo, floating idle state, breathing animation, and interactive diagnostic quiz.",
+    "flow": [
+      {
+        "step": 1,
+        "question": "What is your primary goal right now?",
+        "options": [
+          "I want to earn ₹50,000+/month alongside my job/studies",
+          "I want to switch to full-time AI freelancing",
+          "I want to scale my current services with 10x speed"
+        ]
+      },
+      {
+        "step": 2,
+        "question": "How much AI experience do you currently have?",
+        "options": [
+          "Complete beginner (Used ChatGPT a few times)",
+          "Intermediate (Use AI for basic writing/research)",
+          "Advanced (Prompt engineer or coder)"
+        ]
+      },
+      {
+        "step": 3,
+        "question": "What is holding you back the most?",
+        "options": [
+          "I don't know how to turn AI tools into high-paying services",
+          "I don't know how to find & pitch international clients",
+          "I feel overwhelmed by too many AI tools"
+        ]
+      }
+    ],
+    "outcome_reveal": "LEARN → BUILD → PACKAGE → PRESENT → START flow personalized roadmap generated with instant Suha AI animated response."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Compact Hero Section",
+      "bg": "#150826",
+      "components": [
+        "Eyebrow Pill with Logo & 'SuhaniEdge'",
+        "3-Line Stacked Headline (Line 1: White, Line 2: White, Line 3: Magenta/Pink)",
+        "Short Grey Subtitle",
+        "Gold CTA Button (REGISTER FOR LIVE WEBINAR — ₹9)",
+        "Desktop: Left copy / Right video with purple glow",
+        "Two-Column below headline: LEFT Video Thumbnail + 4 Features overlay + 'Watch how it works' dark pill; RIGHT Gold-bordered pricing card (Founding offer, crossed price, ₹9, checkmarks, gold CTA, 3 trust badges)",
+        "Bottom bar: Dark pill with engagement question & two interactive choice pills"
+      ]
+    },
+    {
+      "id": "benefits",
+      "name": "Why Freelancing with AI in 2026",
+      "bg": "#FFFDF9",
+      "components": ["6 Premium Cards with subtle borders and micro-hover lifts"]
+    },
+    {
+      "id": "learning",
+      "name": "What You Will Master in 120 Mins",
+      "bg": "#F5F0FF",
+      "components": ["7 Numbered Premium Cards with step indicators and key outcome badges"]
+    },
+    {
+      "id": "ai_ecosystem",
+      "name": "The AI Freelancer Stack",
+      "bg": "linear-gradient(135deg, #1A0B2E 0%, #2A1245 50%, #150826 100%)",
+      "components": ["Central 'AI' core node connected with floating glowing category chips"]
+    },
+    {
+      "id": "suha_ai",
+      "name": "Interactive Suha AI Diagnostic Experience",
+      "bg": "#0D0518",
+      "components": ["Animated Suha AI avatar", "3-step interactive quiz cards", "Live personalized strategy reveal"]
+    },
+    {
+      "id": "aha_moment",
+      "name": "The Unfair Advantage Paradigm",
+      "bg": "#FAF9F6",
+      "components": ["Scroll progression: AI TOOLS → AI SKILLS → PROJECTS → SERVICES → CLIENT OUTREACH"]
+    },
+    {
+      "id": "roadmap",
+      "name": "The 5-Step Freelance Launchpad",
+      "bg": "#FAF9F6",
+      "components": ["Curved desktop line / vertical mobile timeline with 5 interactive step nodes"]
+    },
+    {
+      "id": "transformation",
+      "name": "The Reality Split (Without AI vs With SuhaniEdge)",
+      "bg": "#0D0518",
+      "components": ["6 Red ✗ Cards (Old Way)", "6 Green ✓ Cards (SuhaniEdge AI Way)"]
+    },
+    {
+      "id": "bonuses",
+      "name": "Exclusive Registration Bonuses",
+      "bg": "#1A0B2E",
+      "components": ["5 Premium 3D-styled cards with value tags and instant delivery badges"]
+    },
+    {
+      "id": "value_stack",
+      "name": "Total Value Stack & ₹9 Micro-Commitment",
+      "bg": "#150826",
+      "components": ["Itemized value list (Total Value: ₹24,999)", "Crossed price", "Final ₹9 price tag", "Primary Gold CTA"]
+    },
+    {
+      "id": "social_proof",
+      "name": "Real Learner Proof & Moments",
+      "bg": "#FAF9F6",
+      "components": ["6 Vertical (9:16 shorts format) video embed boxes", "No fake names/claims"]
+    },
+    {
+      "id": "mentor",
+      "name": "Meet Your Mentor — Suhani Singh",
+      "bg": "#F5F0FF",
+      "components": ["High-res photo", "Verified credentials", "Story narrative", "Mission statement"]
+    },
+    {
+      "id": "objections",
+      "name": "Addressing Beginner Doubts",
+      "bg": "#FFFDF9",
+      "components": ["Clear answers for non-coders, complete beginners, and busy professionals"]
+    },
+    {
+      "id": "who_its_for",
+      "name": "Who Is This Live Launchpad For?",
+      "bg": "#1A0B2E",
+      "components": ["Target persona checklist with animated check icons"]
+    },
+    {
+      "id": "reality_check",
+      "name": "Who This Is NOT For vs Who This IS For",
+      "bg": "#F5F0FF",
+      "components": ["Strict expectations filter card"]
+    },
+    {
+      "id": "why_this_matters",
+      "name": "Why Act Now",
+      "bg": "#FFFDF9",
+      "components": ["Concise editorial statement on the 2026 AI economic shift"]
+    },
+    {
+      "id": "final_offer",
+      "name": "Final Registration Conversion Section",
+      "bg": "#0D0518",
+      "components": ["Dramatic dark purple background", "Large Gold CTA", "Razorpay trust seal"]
+    },
+    {
+      "id": "final_suha_ai",
+      "name": "Suha AI Final Launch Trigger",
+      "bg": "#150826",
+      "components": ["Grand scale Suha AI invitation with animated glowing callout"]
+    },
+    {
+      "id": "faq",
+      "name": "Frequently Asked Questions",
+      "bg": "#FAF9F6",
+      "components": ["Accordion with smooth expand/collapse"]
+    },
+    {
+      "id": "sticky_cta",
+      "name": "Sticky Mobile Conversion Bar",
+      "bg": "#150826",
+      "components": ["Fixed bottom bar for mobile", "'JOIN LIVE — ₹9' Gold CTA", "Purple to Gold top scroll progress bar"]
+    }
+  ],
+  "accessibility_and_testing": {
+    "data_testid_rules": "All buttons, inputs, links, tabs, quiz choices, accordions, and price tags MUST contain data-testid attributes formatted in kebab-case (e.g. data-testid=\"hero-gold-cta-button\").",
+    "prefers_reduced_motion": "Wrap framer-motion animations with reduced motion checks or use simple opacity fades when requested."
+  },
+  "instructions_to_main_agent": [
+    "Build a stunning single-page React frontend in /app/frontend/src/App.js or modularized under src/components/.",
+    "Ensure the primary CTA strictly uses gold #F4C95D with hover lift and glowing shadow, pointing to https://rzp.io/rzp/webinarregistration9.",
+    "Strictly follow the alternating dark/light section background rhythm.",
+    "Include every single section listed from 1 to 20 with high fidelity design.",
+    "Create interactive Suha AI quiz and character with framer-motion.",
+    "Maintain strict data-testid compliance on all clickable and interactive elements."
+  ]
+}
