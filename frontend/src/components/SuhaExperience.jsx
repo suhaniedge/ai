@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Laptop, Settings, Palette, TrendingUp, HelpCircle, Brain, Compass, Package, Rocket, ArrowDown } from "lucide-react";
+import { Check, Laptop, Settings, Palette, TrendingUp, HelpCircle, Brain, Compass, Package, Rocket, ArrowDown, Volume2, VolumeX } from "lucide-react";
 import { SuhaAI } from "./SuhaAI";
 import { Reveal } from "./Reveal";
 import { QUIZ, FLOW_STEPS, SUHA_TIPS } from "../lib/data";
@@ -12,7 +12,28 @@ export function SuhaExperience() {
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState({});
     const [poke, setPoke] = useState(false);
+    const [voicePlaying, setVoicePlaying] = useState(false);
+    const voiceStarted = useRef(false);
+    const audioRef = useRef(null);
     const done = step >= QUIZ.length;
+
+    const toggleVoice = () => {
+        if (!audioRef.current) {
+            audioRef.current = new Audio(`${process.env.REACT_APP_BACKEND_URL}/api/suha-voice`);
+            audioRef.current.preload = "auto";
+            audioRef.current.onended = () => setVoicePlaying(false);
+            audioRef.current.onerror = () => setVoicePlaying(false);
+        }
+        if (voicePlaying) {
+            audioRef.current.pause();
+            setVoicePlaying(false);
+        } else {
+            voiceStarted.current = true;
+            audioRef.current.play().catch(() => setVoicePlaying(false));
+            setVoicePlaying(true);
+            track("suha_voice_play");
+        }
+    };
 
     const theme = done ? "dark" : QUIZ[step].theme;
     const light = theme === "light";
@@ -31,6 +52,7 @@ export function SuhaExperience() {
     const handlePoke = () => {
         setPoke(true);
         track("suha_poke");
+        if (!voiceStarted.current) toggleVoice();
         setTimeout(() => setPoke(false), 1300);
     };
 
@@ -89,6 +111,20 @@ export function SuhaExperience() {
                     <h2 className="mt-3 font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
                         LET <span className="text-[#a855f7]">SUHA AI</span> FIND YOUR STARTING POINT
                     </h2>
+                    <button
+                        type="button"
+                        data-testid="suha-voice-button"
+                        onClick={toggleVoice}
+                        aria-pressed={voicePlaying}
+                        className={`mx-auto mt-4 flex min-h-[44px] items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition ${
+                            voicePlaying
+                                ? "border-[#f4c95d]/60 bg-[#f4c95d]/10 text-[#f4c95d]"
+                                : "border-[#a855f7]/40 bg-[#38104d]/40 text-[#e9dffc] hover:border-[#f4c95d]/50 hover:text-[#f4c95d]"
+                        }`}
+                    >
+                        {voicePlaying ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                        {voicePlaying ? "Suha is speaking… tap to stop" : "Hear Suha AI"}
+                    </button>
                 </Reveal>
 
                 <div className="mt-8 grid items-start gap-8 sm:mt-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-10">

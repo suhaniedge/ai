@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, Response
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -41,6 +41,25 @@ class StatusCheckCreate(BaseModel):
 @api_router.get("/")
 async def root():
     return {"message": "Hello World"}
+
+VOICE_CACHE = Path("/tmp/suha_voice.mp3")
+
+@api_router.get("/suha-voice")
+async def suha_voice():
+    if not VOICE_CACHE.exists():
+        from emergentintegrations.llm.openai import OpenAITextToSpeech
+        tts = OpenAITextToSpeech(api_key=os.environ["EMERGENT_LLM_KEY"])
+        audio = await tts.generate_speech(
+            text="Hi! I'm Suha AI. Answer three quick questions, and I'll map out your AI freelancing starting point. Let's go!",
+            model="tts-1",
+            voice="shimmer",
+        )
+        VOICE_CACHE.write_bytes(audio)
+    return Response(
+        content=VOICE_CACHE.read_bytes(),
+        media_type="audio/mpeg",
+        headers={"Cache-Control": "public, max-age=86400"},
+    )
 
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):

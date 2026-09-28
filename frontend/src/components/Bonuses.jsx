@@ -47,8 +47,12 @@ export function Bonuses() {
                                     </div>
                                 )}
                                 <div className="mt-5 flex items-center justify-between border-t border-[#a855f7]/20 pt-4">
-                                    <p className="text-xs text-[#e9dffc]/50">Suggested Positioning Value</p>
-                                    <p className="font-display text-base font-extrabold text-[#f4c95d]">{b.value}</p>
+                                    <p className="text-xs text-[#e9dffc]/50">
+                                        Worth <span className="font-semibold text-[#e9dffc]/70 line-through decoration-[#ec4899]/70">{b.value}</span>
+                                    </p>
+                                    <span className="rounded-full bg-[#22c55e]/15 px-3 py-1 font-display text-[11px] font-extrabold uppercase tracking-widest text-[#4ade80] ring-1 ring-[#22c55e]/30">
+                                        FREE
+                                    </span>
                                 </div>
                             </article>
                         </Reveal>

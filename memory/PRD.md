@@ -41,6 +41,11 @@ Build a production-ready, conversion-focused landing page for SuhaniEdge's "AI F
 - Legal (Meta-ads ready): /privacy-policy, /terms-and-conditions, /refund-policy pages with SuhaniEdge/Razorpay/email details, linked in footer.
 - Verified in preview: logo crisp, quiz completes end-to-end on 390px (reveal shows), sticky CTA hides during quiz and returns after, mentor image loads (200, 608KB), all 3 policy pages render, no console errors.
 
+## Iteration 3 (2026-09-28)
+- Bonus cards: "Suggested Positioning Value" replaced with "Worth ₹X" (struck) + green FREE pill.
+- Suha Voice Intro: GET /api/suha-voice (OpenAI tts-1, shimmer voice, EMERGENT_LLM_KEY, disk-cached mp3 at /tmp/suha_voice.mp3). Frontend: "Hear Suha AI" speaker pill + auto-greeting on first Suha poke. Verified: endpoint 200 audio/mpeg (106KB), button toggles playing state.
+- Greeting text: "Hi! I'm Suha AI. Answer three quick questions, and I'll map out your AI freelancing starting point. Let's go!"
+
 ## Known Gaps / Notes
 - Testimonial proof is video-only (6 Shorts) per owner request; no text testimonials on page.
 - Webinar's own value line in the value stack shows "Live Access" (no invented price); bonuses carry the ₹2,997 total.
