@@ -42,30 +42,37 @@ export function SuhaExperience() {
             ? SUHA_TIPS[Math.min(step + 1, SUHA_TIPS.length - 1)]
             : SUHA_TIPS[step];
 
-    const suhaBlock = (size) => (
+    const bubblePill = (
+        <AnimatePresence mode="wait">
+            <motion.span
+                key={bubbleText}
+                initial={{ opacity: 0, y: 6, scale: 0.94 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.94 }}
+                transition={{ duration: 0.22 }}
+                data-testid="suha-bubble"
+                className={`inline-block max-w-full rounded-2xl rounded-bl-sm px-3.5 py-2 text-left text-[11px] font-semibold shadow-lg sm:text-xs ${
+                    light ? "bg-[#1a0b2e] text-white" : "bg-white text-[#1a0b2e]"
+                }`}
+            >
+                {bubbleText}
+            </motion.span>
+        </AnimatePresence>
+    );
+
+    const suhaBlock = (size, { floatBubble = false, pokeId = "suha-poke" } = {}) => (
         <button
             type="button"
             onClick={handlePoke}
-            data-testid="suha-poke"
+            data-testid={pokeId}
             aria-label="Interact with Suha AI"
             className={`relative shrink-0 cursor-pointer transition-transform hover:scale-105 active:scale-95 ${size}`}
         >
+            {!done && answers[Math.min(step, QUIZ.length - 1)] === undefined && (
+                <span aria-hidden className="absolute inset-0 -m-1 animate-ping rounded-full border-2 border-[#f4c95d]/40 [animation-duration:2.4s]" />
+            )}
             <SuhaAI expression={expression} label={`Suha AI, ${expression} expression`} />
-            <AnimatePresence mode="wait">
-                <motion.span
-                    key={bubbleText}
-                    initial={{ opacity: 0, y: 6, scale: 0.92 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.92 }}
-                    transition={{ duration: 0.22 }}
-                    data-testid="suha-bubble"
-                    className={`absolute -top-3 left-1/2 z-10 w-max max-w-[190px] -translate-x-1/2 -translate-y-full rounded-2xl rounded-bl-sm px-3.5 py-2 text-[11px] font-semibold shadow-xl sm:max-w-[220px] sm:text-xs ${
-                        light ? "bg-[#1a0b2e] text-white" : "bg-white text-[#1a0b2e]"
-                    }`}
-                >
-                    {bubbleText}
-                </motion.span>
-            </AnimatePresence>
+            {floatBubble && <span className="absolute -top-3 left-1/2 z-10 w-52 -translate-x-1/2 -translate-y-full">{bubblePill}</span>}
         </button>
     );
 
@@ -87,7 +94,7 @@ export function SuhaExperience() {
                 <div className="mt-8 grid items-start gap-8 sm:mt-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-10">
                     {/* desktop sticky suha */}
                     <div className="hidden lg:sticky lg:top-28 lg:block">
-                        <div className="mx-auto mt-14 w-64">{suhaBlock("w-64")}</div>
+                        <div className="mx-auto mt-16 w-64">{suhaBlock("w-64", { floatBubble: true, pokeId: "suha-poke-desktop" })}</div>
                         <p className="mt-16 text-center text-sm text-[#e9dffc]/60">
                             {done ? "Your path is ready →" : `Question ${step + 1} of ${QUIZ.length}`}
                         </p>
@@ -110,10 +117,10 @@ export function SuhaExperience() {
                                             : "glass-dark text-white"
                                     }`}
                                 >
-                                    {/* one-frame header: suha + question together (mobile) */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="mt-8 lg:hidden">{suhaBlock("w-20 sm:w-24")}</div>
-                                        <div className="min-w-0 flex-1 pt-6 lg:pt-0">
+                                    {/* one-frame header: suha + question together (mobile), bubble flows below */}
+                                    <div className="flex items-center gap-3.5">
+                                        <div className="lg:hidden">{suhaBlock("w-16 sm:w-20", { pokeId: "suha-poke-mobile" })}</div>
+                                        <div className="min-w-0 flex-1">
                                             <p className={`text-xs font-bold uppercase tracking-[0.24em] ${light ? "text-[#7c3aed]" : "text-[#a855f7]"}`}>
                                                 {QUIZ[step].label}
                                                 <span className={`ml-2 font-medium normal-case tracking-normal ${light ? "text-[#6e6b7b]" : "text-[#e9dffc]/50"}`}>
@@ -125,6 +132,7 @@ export function SuhaExperience() {
                                             </h3>
                                         </div>
                                     </div>
+                                    <div className="mt-3 lg:hidden">{bubblePill}</div>
 
                                     <div className="mt-5 space-y-3" role="group" aria-label={QUIZ[step].question}>
                                         {QUIZ[step].options.map((o) => {
@@ -203,7 +211,7 @@ export function SuhaExperience() {
                                     className="glass-dark rounded-[26px] p-6 sm:p-8"
                                 >
                                     {/* mobile suha celebration in-frame */}
-                                    <div className="mb-2 flex justify-center pt-6 lg:hidden">{suhaBlock("w-28")}</div>
+                                    <div className="mb-2 flex justify-center lg:hidden">{suhaBlock("w-28", { pokeId: "suha-poke-reveal" })}</div>
                                     <div className="glass-dark mx-auto mt-4 max-w-sm rounded-2xl rounded-tl-sm p-4 text-center lg:hidden">
                                         <p className="text-xs font-bold uppercase tracking-widest text-[#c084fc]">🤖 Suha AI:</p>
                                         <p className="mt-1.5 font-display text-lg font-extrabold text-[#f4c95d]">“NOW I UNDERSTAND THE GAP.”</p>
