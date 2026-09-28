@@ -22,62 +22,70 @@ export function Navbar() {
     }, []);
 
     return (
-        <header
-            data-testid="site-navbar"
-            className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-                scrolled ? "border-b border-[#a855f7]/15 bg-[#0d0518]/85 backdrop-blur-xl" : "bg-transparent"
-            }`}
-        >
-            <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6" aria-label="Main">
-                <a href="#top" data-testid="nav-logo" className="flex items-center gap-2.5">
-                    <img src={LOGO_URL} alt="SuhaniEdge logo" className="h-9 w-9 rounded-full ring-1 ring-[#a855f7]/40" />
-                    <span className="font-display text-lg font-extrabold tracking-tight text-white">
-                        Suhani<span className="text-[#c084fc]">Edge</span>
-                    </span>
-                </a>
-
-                <div className="hidden items-center gap-7 lg:flex">
-                    {LINKS.map((l) => (
-                        <a
-                            key={l.href}
-                            href={l.href}
-                            data-testid={`nav-link-${l.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                            className="text-sm font-medium text-[#e9dffc]/80 transition hover:text-white"
-                        >
-                            {l.label}
-                        </a>
-                    ))}
-                    <a
-                        href={PAYMENT_LINK}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-testid="nav-cta-button"
-                        onClick={() => track("registration_click", { location: "navbar" })}
-                        className="gold-btn inline-flex min-h-[44px] items-center rounded-full px-5 py-2 font-display text-xs font-extrabold uppercase tracking-wide"
-                    >
-                        Join Live — ₹9
+        <header data-testid="site-navbar" className="fixed inset-x-0 top-0 z-50">
+            <nav
+                aria-label="Main"
+                className={`relative border-b border-[#a855f7]/30 bg-gradient-to-r from-[#1a0b2e] via-[#2a1245] to-[#1a0b2e] backdrop-blur-xl transition-shadow duration-300 ${
+                    scrolled ? "shadow-[0_14px_44px_-14px_rgba(168,85,247,0.55)]" : "shadow-[0_10px_34px_-16px_rgba(0,0,0,0.8)]"
+                }`}
+            >
+                <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+                    <a href="/#top" data-testid="nav-logo" className="flex items-center gap-2.5">
+                        <img
+                            src={LOGO_URL}
+                            alt="SuhaniEdge logo"
+                            className="h-11 w-11 shrink-0 rounded-xl object-cover ring-2 ring-[#a855f7]/50 shadow-[0_0_18px_-4px_rgba(168,85,247,0.8)]"
+                        />
+                        <span className="font-display text-lg font-extrabold tracking-tight text-white">
+                            Suhani<span className="text-[#c084fc]">Edge</span>
+                        </span>
                     </a>
-                </div>
 
-                <button
-                    type="button"
-                    data-testid="nav-menu-toggle"
-                    aria-label={open ? "Close menu" : "Open menu"}
-                    aria-expanded={open}
-                    onClick={() => setOpen(!open)}
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-white lg:hidden"
-                >
-                    {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                </button>
+                    <div className="hidden items-center gap-7 lg:flex">
+                        {LINKS.map((l) => (
+                            <a
+                                key={l.href}
+                                href={`/${l.href}`}
+                                data-testid={`nav-link-${l.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+                                className="text-sm font-medium text-[#e9dffc]/85 transition hover:text-white"
+                            >
+                                {l.label}
+                            </a>
+                        ))}
+                        <a
+                            href={PAYMENT_LINK}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-testid="nav-cta-button"
+                            onClick={() => track("registration_click", { location: "navbar" })}
+                            className="gold-btn inline-flex min-h-[44px] items-center rounded-full px-5 py-2 font-display text-xs font-extrabold uppercase tracking-wide"
+                        >
+                            Join Live — ₹9
+                        </a>
+                    </div>
+
+                    <button
+                        type="button"
+                        data-testid="nav-menu-toggle"
+                        aria-label={open ? "Close menu" : "Open menu"}
+                        aria-expanded={open}
+                        onClick={() => setOpen(!open)}
+                        className="flex h-11 w-11 items-center justify-center rounded-full text-white lg:hidden"
+                    >
+                        {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
+                </div>
+                {/* purple→gold striking light line separating header from hero */}
+                <div aria-hidden className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#f4c95d]/80 to-transparent" />
             </nav>
 
             {open && (
-                <div data-testid="nav-mobile-menu" className="border-t border-[#a855f7]/15 bg-[#0d0518]/95 px-6 py-5 backdrop-blur-xl lg:hidden">
+                <div data-testid="nav-mobile-menu" className="border-b border-[#a855f7]/25 bg-[#1a0b2e]/97 px-6 py-5 backdrop-blur-xl lg:hidden">
                     <div className="flex flex-col gap-4">
                         {LINKS.map((l) => (
                             <a
                                 key={l.href}
-                                href={l.href}
+                                href={`/${l.href}`}
                                 onClick={() => setOpen(false)}
                                 className="min-h-[44px] text-base font-medium text-[#e9dffc]/90"
                             >

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Instagram, Youtube, Linkedin, Mail, Globe } from "lucide-react";
 import { LOGO_URL, SOCIALS } from "../lib/data";
 
@@ -61,7 +62,19 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-10 border-t border-[#a855f7]/10 pt-6 text-center">
+                <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+                    <Link to="/privacy-policy" data-testid="footer-privacy-link" className="text-[#e9dffc]/70 transition hover:text-[#f4c95d]">
+                        Privacy Policy
+                    </Link>
+                    <Link to="/terms-and-conditions" data-testid="footer-terms-link" className="text-[#e9dffc]/70 transition hover:text-[#f4c95d]">
+                        Terms &amp; Conditions
+                    </Link>
+                    <Link to="/refund-policy" data-testid="footer-refund-link" className="text-[#e9dffc]/70 transition hover:text-[#f4c95d]">
+                        Refund &amp; Cancellation
+                    </Link>
+                </div>
+
+                <div className="mt-6 border-t border-[#a855f7]/10 pt-6 text-center">
                     <p className="mx-auto max-w-2xl text-xs leading-relaxed text-[#e9dffc]/40">
                         This is an educational webinar. Results depend on your skills, effort, execution, market and other factors.
                     </p>

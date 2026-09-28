@@ -31,18 +31,26 @@ Build a production-ready, conversion-focused landing page for SuhaniEdge's "AI F
 - Analytics events: hero_cta, suha_q1/2/3, suha_complete, value_stack_cta, final_cta, registration_click, faq_open, testimonial_interaction, exit_intent_shown, hero_video_watch.
 - Verified: page loads at 375/768/1366px with no horizontal overflow; quiz completes to reveal; FAQ opens; sticky CTA appears on mobile scroll; backend /api/ healthy.
 
+## Iteration 2 (2026-09-28)
+- Header: new 1:1 logo (no compression), always-visible gradient navbar with purple→gold strike line; shine-sweep light animation on all gold CTAs.
+- Hero: brand pill removed; compact order = eyebrow → headline → 1-line subtitle → CTA → video/pricing; supporting copy + question chips moved below the video; pricing card shows "Bonuses worth ₹2,997 included" crossed vs ₹9.
+- Suha AI: tappable (poke) with rotating speech-bubble tips; mobile one-frame layout (Suha + question + options + THAT'S ME in one viewport, no scroll); Q1/Q3 dark slides, Q2 light slide; 3D press-depth answer buttons; sticky mobile CTA auto-hides while the quiz is on screen so it never covers quiz buttons.
+- Mentor: real Suhani Singh photo replaces placeholder tile.
+- Proof: video-only — removed all text/image placeholder cards; 6 Shorts remain.
+- Bonuses/value stack: real values ₹999/₹599/₹499/₹599/₹301 (total ₹2,997).
+- Legal (Meta-ads ready): /privacy-policy, /terms-and-conditions, /refund-policy pages with SuhaniEdge/Razorpay/email details, linked in footer.
+- Verified in preview: logo crisp, quiz completes end-to-end on 390px (reveal shows), sticky CTA hides during quiz and returns after, mentor image loads (200, 608KB), all 3 policy pages render, no console errors.
+
 ## Known Gaps / Notes
-- ₹[VALUE] / ₹[TOTAL] placeholders intentionally kept (owner to supply real positioning values).
-- Testimonial + student-project blocks are labeled placeholders pending genuine content.
-- Mentor portrait is a branded placeholder (no real photo supplied).
-- Short #5 (FaWB9N5IBCo) has no YouTube thumbnail image; shows dark poster until played.
+- Testimonial proof is video-only (6 Shorts) per owner request; no text testimonials on page.
+- Webinar's own value line in the value stack shows "Live Access" (no invented price); bonuses carry the ₹2,997 total.
 
 ## Prioritized Backlog
-- P0: Replace ₹[VALUE]/₹[TOTAL] placeholders with real values when supplied; add genuine testimonials/photos.
-- P1: Mentor portrait photo; custom Suha AI illustration/3D render replacing SVG.
-- P2: Real registration deadline/scarcity only if genuinely supplied; WhatsApp float button if a real number is provided.
+- P0: None blocking — page is ad-ready (policies + no fake claims).
+- P1: Meta Pixel / ad event wiring when the pixel ID is supplied (analytics hooks already in place).
+- P2: Custom 3D Suha AI render; WhatsApp float button if a real number is provided.
 
 ## Next Tasks
-1. Swap in real bonus value figures across hero pricing card, bonus cards, value stack.
-2. Add real testimonial quotes/names + student project screenshots.
-3. Provide mentor photo for the mentor section.
+1. Supply Meta Pixel ID to wire ad conversion events to the existing track() calls.
+2. Optional: real values for the live webinar line in the value stack.
+3. Optional: more Shorts links to expand the proof wall.

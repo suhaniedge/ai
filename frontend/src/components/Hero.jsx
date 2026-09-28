@@ -4,7 +4,7 @@ import { GraduationCap, FolderKanban, Users, TrendingUp, Crown, Check, ShieldChe
 import { GoldButton } from "./GoldButton";
 import { LiteVideo } from "./LiteVideo";
 import { SuhaAI } from "./SuhaAI";
-import { HERO_VIDEO_ID, LOGO_URL } from "../lib/data";
+import { HERO_VIDEO_ID, BONUS_TOTAL } from "../lib/data";
 import { track } from "../lib/track";
 
 const FEATURES = [
@@ -21,6 +21,8 @@ const INCLUDED = [
     "AI Project Idea Library + Starter Kit",
 ];
 
+const HERO_QUESTIONS = ["What should you learn?", "What can you build?", "What could you offer?", "How does AI freelancing actually work?"];
+
 export function Hero() {
     const [playing, setPlaying] = useState(false);
     const reduce = useReducedMotion();
@@ -32,7 +34,6 @@ export function Hero() {
 
     return (
         <section id="top" data-testid="hero-section" className="grain relative overflow-hidden bg-[#150826] pb-14 pt-24 sm:pt-28">
-            {/* ambient glows */}
             <div aria-hidden className="pointer-events-none absolute inset-0">
                 <div className="absolute -top-40 left-1/2 h-[480px] w-[820px] -translate-x-1/2 rounded-full bg-[#7c3aed]/25 blur-[130px]" />
                 <div className="absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-[#a855f7]/15 blur-[110px]" />
@@ -40,71 +41,36 @@ export function Hero() {
             </div>
 
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-                {/* brand pill */}
-                <motion.div {...fade(0)} className="flex justify-center">
-                    <div data-testid="hero-brand-pill" className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-2">
-                        <img src={LOGO_URL} alt="" className="h-6 w-6 rounded-full" />
-                        <span className="font-display text-xs font-bold uppercase tracking-[0.18em] text-[#e9dffc]">SuhaniEdge</span>
-                        <span className="hidden h-4 w-px bg-[#a855f7]/40 sm:block" />
-                        <span className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-[#f4c95d] sm:block">AI Freelance Launchpad</span>
-                    </div>
-                </motion.div>
-
                 {/* eyebrow */}
-                <motion.p {...fade(0.05)} data-testid="hero-eyebrow" className="mt-6 text-center text-xs font-bold uppercase tracking-[0.28em] text-[#c084fc] sm:text-sm">
+                <motion.p {...fade(0)} data-testid="hero-eyebrow" className="text-center text-xs font-bold uppercase tracking-[0.28em] text-[#c084fc] sm:text-sm">
                     Live AI Freelancing Webinar
                 </motion.p>
 
                 {/* headline */}
-                <motion.h1 {...fade(0.1)} className="mt-4 text-center font-display text-[1.7rem] font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                <motion.h1 {...fade(0.06)} className="mt-4 text-center font-display text-[1.65rem] font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
                     <span className="block">LEARN AI FREELANCING.</span>
                     <span className="block">BUILD A FUTURE-READY CAREER.</span>
                     <span className="block text-[#ec4899] drop-shadow-[0_0_24px_rgba(236,72,153,0.35)]">NO TECHNICAL KNOWLEDGE REQUIRED.</span>
                 </motion.h1>
 
-                {/* subtitle */}
-                <motion.div {...fade(0.16)} className="mx-auto mt-5 max-w-2xl text-center">
-                    <p className="text-sm leading-relaxed text-[#e9dffc]/70 sm:text-base">
-                        AI is changing the way people work. But learning AI tools is only the beginning.
-                    </p>
-                    <p className="mt-3 text-sm leading-relaxed text-[#e9dffc]/70 sm:text-base">
-                        The real question is: <span className="font-semibold text-white">What can I actually DO with AI?</span>
-                    </p>
-                    <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs font-medium text-[#c084fc] sm:text-sm">
-                        {["What should you learn?", "What can you build?", "What could you offer?", "How does AI freelancing actually work?"].map((q) => (
-                            <span key={q} className="rounded-full border border-[#a855f7]/25 bg-[#38104d]/30 px-3 py-1.5">
-                                {q}
-                            </span>
-                        ))}
-                    </div>
-                    <p className="mt-4 text-sm leading-relaxed text-[#e9dffc]/80 sm:text-base">
-                        This live, beginner-friendly webinar will help you understand the path from learning AI to exploring it as a freelance skill.
-                    </p>
-                </motion.div>
+                <motion.p {...fade(0.12)} className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-[#e9dffc]/70 sm:text-base">
+                    AI is changing the way people work. But learning AI tools is only the beginning.
+                </motion.p>
 
-                {/* CTAs */}
-                <motion.div {...fade(0.22)} className="mt-7 flex flex-col items-center gap-3">
+                {/* CTA */}
+                <motion.div {...fade(0.18)} className="mt-6 flex flex-col items-center gap-3">
                     <GoldButton event="hero_cta" testId="hero-gold-cta-button" className="w-full max-w-md text-base sm:w-auto sm:px-10 sm:text-lg">
                         🚀 JOIN THE LIVE WEBINAR — ₹9
                     </GoldButton>
                     <p data-testid="hero-trust-line" className="text-xs font-medium text-[#e9dffc]/60 sm:text-sm">
                         Beginner-Friendly • Practical • Live Guidance
                     </p>
-                    <a
-                        href="#roadmap"
-                        data-testid="hero-roadmap-link"
-                        className="group inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-[#c084fc] transition hover:text-white"
-                    >
-                        YES, SHOW ME THE AI FREELANCING ROADMAP
-                        <MoveRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                    </a>
-                    <p className="text-xs text-[#e9dffc]/50">No coding required • Start from the basics • Learn by doing</p>
                 </motion.div>
 
                 {/* two-column: video + pricing */}
-                <div className="mt-12 grid items-stretch gap-8 lg:grid-cols-[1.35fr_1fr] lg:gap-10">
+                <div className="mt-10 grid items-stretch gap-8 lg:grid-cols-[1.35fr_1fr] lg:gap-10">
                     {/* LEFT — video */}
-                    <motion.div {...fade(0.28)} className="relative">
+                    <motion.div {...fade(0.24)} className="relative">
                         <div className="video-frame relative p-2 sm:p-3">
                             <LiteVideo
                                 videoId={HERO_VIDEO_ID}
@@ -114,7 +80,6 @@ export function Hero() {
                                 testId="hero-video-play-button"
                                 rounded="rounded-[20px]"
                             />
-                            {/* overlay features card */}
                             <div data-testid="hero-features-card" className="glass-dark absolute -left-1 top-6 hidden w-44 rounded-2xl p-4 sm:block lg:-left-6">
                                 {FEATURES.map((f) => (
                                     <div key={f.label} className="flex items-center gap-2.5 py-1.5">
@@ -123,7 +88,6 @@ export function Hero() {
                                     </div>
                                 ))}
                             </div>
-                            {/* floating suha */}
                             <div className="absolute -right-3 -top-10 w-20 sm:-right-6 sm:w-24 lg:-right-10 lg:w-28">
                                 <SuhaAI expression="idle" label="Suha AI waving" />
                             </div>
@@ -145,7 +109,7 @@ export function Hero() {
                     </motion.div>
 
                     {/* RIGHT — pricing card */}
-                    <motion.div {...fade(0.34)} className="relative">
+                    <motion.div {...fade(0.3)} className="relative">
                         <div
                             data-testid="hero-pricing-card"
                             className="relative h-full rounded-[26px] border-2 border-[#f4c95d]/70 bg-gradient-to-b from-[#2a1245] to-[#150826] p-6 shadow-[0_0_60px_-14px_rgba(244,201,93,0.45)] sm:p-7"
@@ -156,7 +120,9 @@ export function Hero() {
                             </div>
 
                             <div className="mt-4 text-center">
-                                <p className="text-sm font-medium text-[#e9dffc]/50 line-through decoration-[#ec4899]/70 decoration-2">₹[VALUE]</p>
+                                <p className="text-sm font-medium text-[#e9dffc]/50">
+                                    Bonuses worth <span className="line-through decoration-[#ec4899]/70 decoration-2">{BONUS_TOTAL}</span> included
+                                </p>
                                 <p data-testid="hero-price" className="font-display text-6xl font-extrabold tracking-tight text-[#f4c95d] drop-shadow-[0_0_24px_rgba(244,201,93,0.4)]">
                                     ₹9
                                 </p>
@@ -177,7 +143,7 @@ export function Hero() {
                                 🚀 JOIN THE LIVE WEBINAR — ₹9 <span className="cta-arrow">→</span>
                             </GoldButton>
 
-                            <div className="mt-5 flex items-center justify-center gap-4 text-[11px] font-medium text-[#e9dffc]/60">
+                            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[11px] font-medium text-[#e9dffc]/60">
                                 <span className="flex items-center gap-1.5">
                                     <ShieldCheck className="h-3.5 w-3.5 text-[#f4c95d]" /> Secure checkout
                                 </span>
@@ -192,11 +158,37 @@ export function Hero() {
                     </motion.div>
                 </div>
 
+                {/* supporting copy — below video */}
+                <motion.div {...fade(0.1)} className="mx-auto mt-12 max-w-3xl text-center">
+                    <p className="text-sm leading-relaxed text-[#e9dffc]/80 sm:text-base">
+                        The real question is: <span className="font-semibold text-white">What can I actually DO with AI?</span>
+                    </p>
+                    <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs font-medium text-[#c084fc] sm:text-sm">
+                        {HERO_QUESTIONS.map((q) => (
+                            <span key={q} className="rounded-full border border-[#a855f7]/25 bg-[#38104d]/30 px-3 py-1.5">
+                                {q}
+                            </span>
+                        ))}
+                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-[#e9dffc]/80 sm:text-base">
+                        This live, beginner-friendly webinar will help you understand the path from learning AI to exploring it as a freelance skill.
+                    </p>
+                    <a
+                        href="#roadmap"
+                        data-testid="hero-roadmap-link"
+                        className="group mt-4 inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-[#c084fc] transition hover:text-white"
+                    >
+                        YES, SHOW ME THE AI FREELANCING ROADMAP
+                        <MoveRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                    </a>
+                    <p className="text-xs text-[#e9dffc]/50">No coding required • Start from the basics • Learn by doing</p>
+                </motion.div>
+
                 {/* bottom engagement bar */}
                 <motion.div
-                    {...fade(0.4)}
+                    {...fade(0.15)}
                     data-testid="hero-engagement-bar"
-                    className="glass-dark mt-12 flex flex-col items-center gap-4 rounded-full px-6 py-4 text-center lg:flex-row lg:justify-between lg:text-left"
+                    className="glass-dark mt-10 flex flex-col items-center gap-4 rounded-3xl px-6 py-5 text-center lg:flex-row lg:justify-between lg:rounded-full lg:text-left"
                 >
                     <p className="text-sm font-semibold text-white">Where are you with AI right now?</p>
                     <div className="flex flex-wrap items-center justify-center gap-2.5">

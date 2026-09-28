@@ -1,6 +1,6 @@
 import { MoveRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { LOGO_URL } from "../lib/data";
+import { MENTOR_PHOTO } from "../lib/data";
 
 export function Mentor() {
     return (
@@ -9,11 +9,19 @@ export function Mentor() {
                 <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
                     <Reveal>
                         <div className="relative mx-auto max-w-sm">
-                            <div className="rounded-[28px] bg-gradient-to-br from-[#1a0b2e] via-[#38104d] to-[#150826] p-10 text-center shadow-[0_34px_70px_-30px_rgba(26,11,46,0.55)]">
-                                <img src={LOGO_URL} alt="SuhaniEdge brand mark" className="mx-auto h-24 w-24 rounded-full ring-2 ring-[#a855f7]/50" />
-                                <p className="mt-6 font-display text-6xl font-extrabold text-[#f4c95d]">SS</p>
-                                <p className="mt-2 font-display text-sm font-bold uppercase tracking-[0.2em] text-[#e9dffc]/80">Suhani Singh</p>
-                                <p className="mt-3 text-xs text-[#e9dffc]/50">[ Mentor portrait ]</p>
+                            <div className="rounded-[28px] bg-gradient-to-br from-[#1a0b2e] via-[#38104d] to-[#150826] p-3 shadow-[0_34px_70px_-30px_rgba(26,11,46,0.55)]">
+                                <img
+                                    src={MENTOR_PHOTO}
+                                    alt="Suhani Singh — AI Educator and Mentor"
+                                    loading="lazy"
+                                    className="aspect-square w-full rounded-[20px] object-cover"
+                                />
+                                <div className="flex items-center justify-between px-4 py-4">
+                                    <p className="font-display text-lg font-extrabold text-white">Suhani Singh</p>
+                                    <span className="rounded-full bg-[#f4c95d]/15 px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-[#f4c95d]">
+                                        Your Mentor
+                                    </span>
+                                </div>
                             </div>
                             <div aria-hidden className="absolute -right-4 -top-4 h-24 w-24 rounded-full border-2 border-dashed border-[#a855f7]/40" />
                         </div>

@@ -1,7 +1,7 @@
 import { ShieldCheck, Zap } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { GoldButton } from "./GoldButton";
-import { VALUE_STACK } from "../lib/data";
+import { VALUE_STACK, BONUS_TOTAL } from "../lib/data";
 
 export function ValueStack() {
     return (
@@ -18,16 +18,24 @@ export function ValueStack() {
 
                         <ul className="mt-8 divide-y divide-[#a855f7]/15">
                             {VALUE_STACK.map((v, i) => (
-                                <li key={v} data-testid={`value-item-${i + 1}`} className="flex items-center justify-between gap-4 py-3.5">
-                                    <span className="text-sm font-semibold text-[#f3effe]">{v}</span>
-                                    <span className="shrink-0 font-display text-sm font-bold text-[#e9dffc]/50">₹[VALUE]</span>
+                                <li key={v.name} data-testid={`value-item-${i + 1}`} className="flex items-center justify-between gap-4 py-3.5">
+                                    <span className="text-sm font-semibold text-[#f3effe]">{v.name}</span>
+                                    <span
+                                        className={`shrink-0 font-display text-sm font-bold ${
+                                            v.value === "Live Access" ? "uppercase tracking-widest text-[#4ade80]" : "text-[#e9dffc]/70"
+                                        }`}
+                                    >
+                                        {v.value}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
 
                         <div className="mt-6 flex items-center justify-between border-t-2 border-dashed border-[#a855f7]/30 pt-5">
-                            <span className="font-display text-sm font-extrabold uppercase tracking-widest text-[#c084fc]">Total Value</span>
-                            <span className="font-display text-xl font-extrabold text-[#e9dffc]/60 line-through decoration-[#ec4899]/70">₹[TOTAL]</span>
+                            <span className="font-display text-sm font-extrabold uppercase tracking-widest text-[#c084fc]">Total Bonus Value</span>
+                            <span data-testid="value-stack-total" className="font-display text-xl font-extrabold text-[#e9dffc]/60 line-through decoration-[#ec4899]/70">
+                                {BONUS_TOTAL}
+                            </span>
                         </div>
 
                         <div className="mt-8 rounded-3xl border-2 border-[#f4c95d]/60 bg-[#f4c95d]/5 p-6 text-center shadow-[0_0_50px_-12px_rgba(244,201,93,0.4)]">

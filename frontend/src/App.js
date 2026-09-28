@@ -20,6 +20,7 @@ import { FinalSuha } from "@/components/FinalSuha";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { ProgressBar, StickyCTA, ExitIntent } from "@/components/Overlays";
+import { PolicyPage, ScrollToTop } from "@/components/Policies";
 
 function LandingPage() {
     return (
@@ -59,9 +60,13 @@ function App() {
     return (
         <MotionConfig reducedMotion="user">
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/ai-freelancing-webinar" element={<LandingPage />} />
+                    <Route path="/privacy-policy" element={<PolicyPage policyKey="privacy" />} />
+                    <Route path="/terms-and-conditions" element={<PolicyPage policyKey="terms" />} />
+                    <Route path="/refund-policy" element={<PolicyPage policyKey="refund" />} />
                 </Routes>
             </BrowserRouter>
         </MotionConfig>

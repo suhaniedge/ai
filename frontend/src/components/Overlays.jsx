@@ -19,15 +19,25 @@ export function ProgressBar() {
 
 export function StickyCTA() {
     const [visible, setVisible] = useState(false);
+    const [quizInView, setQuizInView] = useState(false);
+
     useEffect(() => {
         const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.75);
         window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    useEffect(() => {
+        const quiz = document.querySelector('[data-testid="suha-experience-section"]');
+        if (!quiz) return;
+        const obs = new IntersectionObserver(([entry]) => setQuizInView(entry.isIntersecting), { threshold: 0.15 });
+        obs.observe(quiz);
+        return () => obs.disconnect();
+    }, []);
+
     return (
         <AnimatePresence>
-            {visible && (
+            {visible && !quizInView && (
                 <motion.div
                     initial={{ y: 90 }}
                     animate={{ y: 0 }}

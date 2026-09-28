@@ -46,10 +46,9 @@ export function Bonuses() {
                                         ))}
                                     </div>
                                 )}
-                                <div className="mt-5 border-t border-[#a855f7]/20 pt-4">
-                                    <p className="text-xs text-[#e9dffc]/50">
-                                        Suggested Positioning Value: <span className="font-semibold text-[#e9dffc]/70">₹[VALUE]</span>
-                                    </p>
+                                <div className="mt-5 flex items-center justify-between border-t border-[#a855f7]/20 pt-4">
+                                    <p className="text-xs text-[#e9dffc]/50">Suggested Positioning Value</p>
+                                    <p className="font-display text-base font-extrabold text-[#f4c95d]">{b.value}</p>
                                 </div>
                             </article>
                         </Reveal>

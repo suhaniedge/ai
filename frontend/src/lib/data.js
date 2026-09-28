@@ -1,6 +1,8 @@
 export const PAYMENT_LINK = "https://rzp.io/rzp/webinarregistration9";
 export const LOGO_URL =
-    "https://customer-assets-m6fa6gv7.emergentagent.net/job_f292aed3-4ad1-4aa0-bf99-e3f7a0d9bf7d/artifacts/chwks273_Suhaniedge%20logo%20only.jpeg";
+    "https://customer-assets-eiarnc6j.emergentagent.net/job_future-work-ai-7/artifacts/edkppzxr_Suhaniedge%20logo%20in%201%20ratio%201.jpeg";
+export const MENTOR_PHOTO =
+    "https://customer-assets-eiarnc6j.emergentagent.net/job_future-work-ai-7/artifacts/5tpifpfu_image-1.jpeg";
 export const HERO_VIDEO_ID = "mxqDVpum6eI";
 export const SHORT_IDS = [
     "95DdnZIahVs",
@@ -55,6 +57,7 @@ export const QUIZ = [
         id: "suha_q1",
         label: "QUESTION 01",
         question: "WHERE ARE YOU RIGHT NOW WITH AI?",
+        theme: "dark",
         options: [
             { key: "A", text: "I use ChatGPT, but I don't know what I can actually do with AI." },
             { key: "B", text: "I've tried AI tools, but I don't know what skill to focus on." },
@@ -67,6 +70,7 @@ export const QUIZ = [
         id: "suha_q2",
         label: "QUESTION 02",
         question: "WHAT WOULD YOU LIKE TO DO WITH AI?",
+        theme: "light",
         options: [
             { key: "A", icon: "Laptop", text: "BUILD PROJECTS" },
             { key: "B", icon: "Settings", text: "SOLVE BUSINESS PROBLEMS" },
@@ -80,6 +84,7 @@ export const QUIZ = [
         id: "suha_q3",
         label: "QUESTION 03",
         question: "WHAT WOULD YOU LOVE TO LEAVE THIS WEBINAR WITH?",
+        theme: "dark",
         options: [
             { key: "A", icon: "Brain", text: "A BETTER UNDERSTANDING OF AI" },
             { key: "B", icon: "Compass", text: "A CLEAR LEARNING DIRECTION" },
@@ -89,6 +94,13 @@ export const QUIZ = [
         ],
         cta: "SHOW ME THE ROADMAP →",
     },
+];
+
+export const SUHA_TIPS = [
+    "Tap an answer — I'm listening!",
+    "Nice choice. Keep going!",
+    "I'm mapping your starting point...",
+    "Almost there — one more!",
 ];
 
 export const FLOW_STEPS = ["LEARN", "BUILD", "PACKAGE", "PRESENT", "START"];
@@ -127,38 +139,45 @@ export const BONUSES = [
         body: "AI-powered assistants to help you work through different parts of your freelancing journey.",
         extra: "Ideas • Projects • Services • Portfolio • Outreach • Action Plans",
         extraLabel: "Use them for:",
+        value: "₹999",
     },
     {
         n: "BONUS #2",
         title: "AI TOOLS & WORKFLOW GUIDE",
         body: "A simple starting guide to help you navigate the growing AI ecosystem without getting overwhelmed.",
+        value: "₹599",
     },
     {
         n: "BONUS #3",
         title: "AI PROJECT IDEA LIBRARY",
         body: "Practical ideas to help you move from:",
         quote: ["“I want to learn AI.”", "“I want to build something.”"],
+        value: "₹499",
     },
     {
         n: "BONUS #4",
         title: "AI FREELANCING STARTER KIT",
         body: "Practical resources to help you continue learning and taking action after the webinar.",
+        value: "₹599",
     },
     {
         n: "BONUS #5",
         title: "FREELANCING ACTION CHECKLIST",
         body: "A simple checklist to help you move from:",
         quote: ["LEARN → BUILD → SHOW → START"],
+        value: "₹301",
     },
 ];
 
+export const BONUS_TOTAL = "₹2,997";
+
 export const VALUE_STACK = [
-    "LIVE AI FREELANCING WEBINAR",
-    "AI FREELANCE BUILDER GPTs",
-    "AI TOOLS & WORKFLOW GUIDE",
-    "AI PROJECT IDEA LIBRARY",
-    "AI FREELANCING STARTER KIT",
-    "FREELANCING ACTION CHECKLIST",
+    { name: "LIVE AI FREELANCING WEBINAR", value: "Live Access" },
+    { name: "AI FREELANCE BUILDER GPTs", value: "₹999" },
+    { name: "AI TOOLS & WORKFLOW GUIDE", value: "₹599" },
+    { name: "AI PROJECT IDEA LIBRARY", value: "₹499" },
+    { name: "AI FREELANCING STARTER KIT", value: "₹599" },
+    { name: "FREELANCING ACTION CHECKLIST", value: "₹301" },
 ];
 
 export const FAQS = [
