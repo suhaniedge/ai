@@ -19,7 +19,7 @@ export function SuhaExperience() {
 
     const toggleVoice = () => {
         if (!audioRef.current) {
-            audioRef.current = new Audio(`${process.env.REACT_APP_BACKEND_URL}/api/suha-voice`);
+            audioRef.current = new Audio(`${process.env.PUBLIC_URL}/suha-voice.mp3`);
             audioRef.current.preload = "auto";
             audioRef.current.onended = () => setVoicePlaying(false);
             audioRef.current.onerror = () => setVoicePlaying(false);

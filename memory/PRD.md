@@ -49,6 +49,10 @@ Build a production-ready, conversion-focused landing page for SuhaniEdge's "AI F
 ## Iteration 4 (2026-09-28)
 - Meta Pixel 1054533697572605 installed (base code + PageView in index.html). track.js forwards to fbq: InitiateCheckout {value: 9, currency: INR} on hero/value-stack/final/registration CTAs, Lead on quiz completion, trackCustom for all funnel events (suha_q1-3, faq_open, video plays, pokes), SPA PageView on route change. Verified in browser: fbq loaded, all events fire with correct params.
 
+## Iteration 5 (2026-09-28)
+- Voice greeting moved to static file /public/suha-voice.mp3 — works on Emergent preview AND static Cloudflare Pages (no backend dependency). Frontend now plays the local mp3.
+- Static build packaged for Cloudflare Pages: /app/suhaniedge-cloudflare-build.zip (contains build/ output + _redirects for SPA routes + suha-voice.mp3). Verified mp3 serves as audio/mpeg from both preview and static build.
+
 ## Known Gaps / Notes
 - Testimonial proof is video-only (6 Shorts) per owner request; no text testimonials on page.
 - Webinar's own value line in the value stack shows "Live Access" (no invented price); bonuses carry the ₹2,997 total.
