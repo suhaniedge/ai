@@ -46,6 +46,9 @@ Build a production-ready, conversion-focused landing page for SuhaniEdge's "AI F
 - Suha Voice Intro: GET /api/suha-voice (OpenAI tts-1, shimmer voice, EMERGENT_LLM_KEY, disk-cached mp3 at /tmp/suha_voice.mp3). Frontend: "Hear Suha AI" speaker pill + auto-greeting on first Suha poke. Verified: endpoint 200 audio/mpeg (106KB), button toggles playing state.
 - Greeting text: "Hi! I'm Suha AI. Answer three quick questions, and I'll map out your AI freelancing starting point. Let's go!"
 
+## Iteration 4 (2026-09-28)
+- Meta Pixel 1054533697572605 installed (base code + PageView in index.html). track.js forwards to fbq: InitiateCheckout {value: 9, currency: INR} on hero/value-stack/final/registration CTAs, Lead on quiz completion, trackCustom for all funnel events (suha_q1-3, faq_open, video plays, pokes), SPA PageView on route change. Verified in browser: fbq loaded, all events fire with correct params.
+
 ## Known Gaps / Notes
 - Testimonial proof is video-only (6 Shorts) per owner request; no text testimonials on page.
 - Webinar's own value line in the value stack shows "Live Access" (no invented price); bonuses carry the ₹2,997 total.

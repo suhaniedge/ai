@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { SOCIALS, PAYMENT_LINK } from "../lib/data";
+import { track } from "../lib/track";
 
 const BIZ = {
     name: "SuhaniEdge",
@@ -171,8 +172,14 @@ export const POLICY_CONTENT = {
 
 export function ScrollToTop() {
     const { pathname } = useLocation();
+    const first = useRef(true);
     useEffect(() => {
         window.scrollTo(0, 0);
+        if (first.current) {
+            first.current = false;
+            return;
+        }
+        track("PageView", { path: pathname });
     }, [pathname]);
     return null;
 }
